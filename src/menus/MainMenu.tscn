@@ -1,0 +1,194 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/fonts/defaultFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/menus/3DMenuScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Fader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/murder.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://src/menus/BtnStylebox.tres" type="StyleBox" id=5]
+[ext_resource path="res://src/menus/MainMenu.gd" type="Script" id=6]
+[ext_resource path="res://assets/sounds/main_theme.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/fonts/conjuring.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "music_fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -20.0, -80.0 ]
+}
+
+[node name="MainMenu" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fader" parent="CanvasLayer" instance=ExtResource( 3 )]
+pause_mode = 2
+
+[node name="Menu" type="Control" parent="CanvasLayer/Fader"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fader/Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Fader/Menu/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 333.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Fader/Menu/VBoxContainer/HBoxContainer"]
+margin_left = 194.0
+margin_top = 84.0
+margin_right = 304.0
+margin_bottom = 249.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "{"
+align = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Fader/Menu/VBoxContainer/HBoxContainer"]
+margin_left = 308.0
+margin_right = 716.0
+margin_bottom = 333.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "TiC TaC
+esCApE"
+align = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Fader/Menu/VBoxContainer/HBoxContainer"]
+margin_left = 720.0
+margin_top = 84.0
+margin_right = 830.0
+margin_bottom = 249.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "}"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Fader/Menu/VBoxContainer"]
+margin_top = 353.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer"]
+margin_left = 403.0
+margin_top = 61.0
+margin_right = 620.0
+margin_bottom = 185.0
+
+[node name="StartBtn" type="Button" parent="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 217.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 5 )
+text = "Start Game"
+
+[node name="QuitBtn" type="Button" parent="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 217.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 5 )
+text = "Quit  Game"
+
+[node name="Label" type="Label" parent="CanvasLayer/Fader/Menu"]
+margin_left = 15.0
+margin_top = 563.0
+margin_right = 163.0
+margin_bottom = 585.0
+custom_colors/font_color = Color( 0.462745, 0.462745, 0.462745, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "game by Nartynka"
+
+[node name="Tutorial1" type="CenterContainer" parent="CanvasLayer/Fader"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Fader/Tutorial1"]
+margin_left = 149.0
+margin_top = 197.0
+margin_right = 874.0
+margin_bottom = 402.0
+custom_fonts/font = ExtResource( 1 )
+text = "you are in a maze, haunted 
+by a tic tac. you cant hide,
+it knows where you are. You will hear 
+when it approaches you, avoid it!"
+align = 1
+
+[node name="Tutorial2" type="CenterContainer" parent="CanvasLayer/Fader"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Fader/Tutorial2"]
+margin_left = 101.0
+margin_top = 171.0
+margin_right = 923.0
+margin_bottom = 428.0
+custom_fonts/font = ExtResource( 1 )
+text = "to survive, collect all glowing orbs 
+scattered around the maze.
+orbs emits sonar sound, find them all 
+or tic tac will find you and you will never 
+see the light of day again!"
+align = 1
+
+[node name="3DMenuScene" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/music_fade = SubResource( 3 )
+
+[connection signal="pressed" from="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer/VBoxContainer/StartBtn" to="." method="_on_StartBtn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]
