@@ -113,13 +113,13 @@ margin_bottom = 600.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer"]
-margin_left = 403.0
+margin_left = 398.0
 margin_top = 61.0
-margin_right = 620.0
+margin_right = 626.0
 margin_bottom = 185.0
 
 [node name="StartBtn" type="Button" parent="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 217.0
+margin_right = 228.0
 margin_bottom = 60.0
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 5 )
@@ -127,11 +127,11 @@ text = "Start Game"
 
 [node name="QuitBtn" type="Button" parent="CanvasLayer/Fader/Menu/VBoxContainer/CenterContainer/VBoxContainer"]
 margin_top = 64.0
-margin_right = 217.0
+margin_right = 228.0
 margin_bottom = 124.0
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 5 )
-text = "Quit  Game"
+text = "Quitt  Game"
 
 [node name="Label" type="Label" parent="CanvasLayer/Fader/Menu"]
 margin_left = 15.0
@@ -178,6 +178,37 @@ orbs emits sonar sound, find them all
 or tic tac will find you and you will never 
 see the light of day again!"
 align = 1
+
+[node name="Tutorial3" type="CenterContainer" parent="CanvasLayer/Fader"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Fader/Tutorial3"]
+margin_left = 121.0
+margin_top = 223.0
+margin_right = 902.0
+margin_bottom = 376.0
+custom_fonts/font = ExtResource( 1 )
+text = "Best played with headphones on
+
+you have a flashlight on f key if you need"
+align = 1
+
+[node name="SkipLabel" type="Label" parent="CanvasLayer/Fader"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -199.0
+margin_top = -72.0
+margin_right = 199.0
+margin_bottom = -23.0
+custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Press space to skip all"
 
 [node name="3DMenuScene" parent="." instance=ExtResource( 2 )]
 
