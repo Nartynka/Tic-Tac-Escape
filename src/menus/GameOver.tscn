@@ -75,24 +75,24 @@ margin_right = 1024.0
 margin_bottom = 484.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer"]
-margin_left = 403.0
-margin_right = 621.0
+margin_left = 398.0
+margin_right = 626.0
 margin_bottom = 124.0
 
-[node name="MainMenuBtn" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 218.0
+[node name="PlayBtn" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 228.0
 margin_bottom = 60.0
 custom_fonts/font = ExtResource( 2 )
 custom_styles/normal = ExtResource( 1 )
-text = "Main menu"
+text = "Play Again"
 
 [node name="QuitBtn" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer"]
 margin_top = 64.0
-margin_right = 218.0
+margin_right = 228.0
 margin_bottom = 124.0
 custom_fonts/font = ExtResource( 2 )
 custom_styles/normal = ExtResource( 1 )
-text = "Quit  Game"
+text = "Quitt  Game"
 
 [node name="3DMenuScene" parent="." instance=ExtResource( 5 )]
 
@@ -101,5 +101,5 @@ stream = ExtResource( 7 )
 volume_db = -20.0
 autoplay = true
 
-[connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_PlayBtn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]
