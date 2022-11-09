@@ -13,9 +13,8 @@ To survive you must collect all orbs, they emit sonar sound, you will find them 
 ## Screenshots
 
 ![Main Menu](screenshots/mainmenu.png)
-
 ![Gameplay](screenshots/start.png)
-
+![TicTac](screenshots/tic%20tac.png)
 ![Gameover](screenshots/gameover.png)
 
 *More in screenshots folder*
